@@ -1,7 +1,7 @@
 {
   "name": "@thynclabs/vault-whisper",
   "sdk-type": "client",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "vault-whisper is a package that allows you to fetch secrets from Azure Key Vault and set them as environment variables.",
   "author": "Thync Labs",
   "license": "MIT",
