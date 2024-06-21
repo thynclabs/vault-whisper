@@ -21,7 +21,6 @@ export async function whisperSecrets(vaultName: string, secrets: string[]): Prom
       const secret = await client.getSecret(secretName);
       if (secret && secret.value) {
         process.env[snakeCase(secretName).toUpperCase()] = secret.value;
-        console.log(`Whispered secret ${secretName}: ${secret.value}`);
       } else {
         console.error(`Secret ${secretName} not found`);
       }
