@@ -1,0 +1,10 @@
+.git
+.github
+examples
+node_modules
+src
+.env
+.gitignore
+.npmignore
+tsconfig.json
+yarn.lock
