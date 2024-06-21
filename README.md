@@ -1,5 +1,5 @@
 # vault-whisper
-`vault-whisper-ts` is a package that allows you to fetch secrets from Azure Key Vault and set them as environment variables.
+`vault-whisper` is a package that allows you to fetch secrets from Azure Key Vault and set them as environment variables.
 
 ## Installation
 To install, use npm or yarn:
