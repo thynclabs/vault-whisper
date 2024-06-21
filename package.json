@@ -1,0 +1,18 @@
+{
+  "name": "vault-whisper",
+  "version": "1.0.0",
+  "author": "Thync Labs",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@azure/identity": "^4.3.0",
+    "@azure/keyvault-secrets": "^4.8.0",
+    "dotenv": "^16.4.5",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.5",
+    "@types/node": "^20.14.7",
+    "typescript": "^5.5.2"
+  }
+}
