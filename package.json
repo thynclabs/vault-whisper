@@ -1,10 +1,29 @@
 {
   "name": "@thynclabs/vault-whisper",
-  "main": "./dist/index.js",
-  "version": "1.0.5",
+  "sdk-type": "client",
+  "version": "1.0.6",
+  "description": "vault-whisper is a package that allows you to fetch secrets from Azure Key Vault and set them as environment variables.",
   "author": "Thync Labs",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thynclabs/vault-whisper/issues"
+  },
+  "homepage": "https://github.com/thynclabs/vault-whisper/blob/main/README.md",
+  "repository": "github:thynclabs/vault-whisper",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "azure",
+    "keyvault",
+    "vault",
+    "secrets",
+    "env",
+    "environment",
+    "variables"
+  ],
+  "main": "./dist/index.js",
   "dependencies": {
     "@azure/identity": "^4.3.0",
     "@azure/keyvault-secrets": "^4.8.0",
