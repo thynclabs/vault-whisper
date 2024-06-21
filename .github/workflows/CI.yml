@@ -29,6 +29,8 @@ jobs:
         run: yarn install --silent --inline-builds --network-timeout 600000
       - name: Build
         run: yarn tsc
+      - name: Clear npm cache
+        run: npm cache clean --force
       - name: Publish to npm
         run: npm publish --access public  # Adjust access level if necessary
         env:
