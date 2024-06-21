@@ -31,7 +31,7 @@ jobs:
         run: yarn tsc
 
       - name: Login to npm
-        run: echo "@thynclabs:registry=https://registry.npmjs.org/" > ~/.npmrc && echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> ~/.npmrc
+        run: echo "thynclabs:registry=https://registry.npmjs.org/" > ~/.npmrc && echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> ~/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}  # Add your NPM token as a secret in GitHub repository settings
 
