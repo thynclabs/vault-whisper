@@ -1,7 +1,7 @@
 {
   "name": "@thynclabs/vault-whisper",
   "main": "./dist/index.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Thync Labs",
   "license": "ISC",
   "description": "",
