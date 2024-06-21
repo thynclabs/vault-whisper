@@ -29,12 +29,8 @@ jobs:
         run: yarn install --silent --inline-builds --network-timeout 600000
       - name: Build
         run: yarn tsc
-
-      - name: Login to npm
-        run: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> ~/.npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}  # Add your NPM token as a secret in GitHub repository settings
-
       - name: Publish to npm
         run: npm publish --access public  # Adjust access level if necessary
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
