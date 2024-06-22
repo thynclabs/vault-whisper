@@ -51,8 +51,6 @@ export async function whisperSecrets(vaultName: string, secrets: string[]): Prom
   const credential = new DefaultAzureCredential();
   const url = vaultUrl(vaultName);
 
-  console.log(`Fetching secrets from ${url}...`);
-
   const client = new SecretClient(url, credential);
 
   for (const secretName of secrets) {
