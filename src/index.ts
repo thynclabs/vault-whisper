@@ -53,18 +53,14 @@ export async function whisperSecrets(vaultName: string, secrets: string[]): Prom
 
   const client = new SecretClient(url, credential);
 
-  for (const secretName of secrets) {
-    try {
-      const secret = await client.getSecret(secretName);
-      if (secret && secret.value) {
-        process.env[snakeUpperCase(secretName)] = secret.value;
-      } else {
-        console.error(`Secret ${secretName} not found`);
-      }
-    } catch (error: any) {
-      console.error(`Failed to whisper secret ${secretName}: ${error.message}`);
+  await Promise.allSettled(secrets.map(async secretName => {
+    const secret = await client.getSecret(secretName);
+    if (secret && secret.value) {
+      process.env[snakeUpperCase(secretName)] = secret.value;
+    } else {
+      console.error(`Secret ${secretName} not found`);
     }
-  }
+  }));
 }
 
 /**
