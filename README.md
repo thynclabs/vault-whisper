@@ -1,5 +1,6 @@
-# vault-whisper
-`vault-whisper` is a package that allows you to fetch secrets from Azure Key Vault and set them as environment variables.
+# @thynclabs/vault-whisper
+`@thynclabs/vault-whisper` is a powerful and intuitive npm package designed to securely read secrets from Azure Key Vault and automatically set them as environment variables in your application. By transforming secret names into a consistent, snake_case uppercase format, `@thynclabs/vault-whisper` ensures easy and standardized access to sensitive information within your development and deployment environments.
+
 
 ## Installation
 To install, use npm or yarn:
@@ -10,6 +11,7 @@ yarn add @thynclabs/vault-whisper
 ```
 
 ## Usage
+#### Reading Secrets from Azure Key Vault
 ```js
 const { whisperSecrets } = require('@thynclabs/vault-whisper');
 
@@ -25,6 +27,24 @@ whisperSecrets(keyVaultName, secrets)
         console.error('Failed to fetch secrets:', err);
     });
 ```
+#### Adding Secrets to Azure Key Vault
+```js
+import { addSecret } from '@thynclabs/vault-whisper';
+
+const vaultName = 'your-keyvault-name';
+const secretName = 'new-secret-name';
+const secretValue = 'your-secret-value';
+
+addSecret(vaultName, secretName, secretValue)
+  .then(() => {
+    console.log(`Secret ${secretName} added to ${vaultName}`);
+  })
+  .catch(err => {
+    console.error('Error adding secret:', err);
+  });
+
+```
+
 
 #### NOTE:
 The name of each environment variable will be converted to a snake_case uppercase format to ensure consistency and readability. This transformation involves replacing any hyphens (`-`) with underscores (`_`) and converting all letters to uppercase.
