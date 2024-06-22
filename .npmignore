@@ -10,3 +10,5 @@ tsconfig.json
 yarn.lock
 .npmrc
 .idea
+CHANGELOG.md
+README.md
