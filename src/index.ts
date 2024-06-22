@@ -87,14 +87,10 @@ export async function whisperSecrets(vaultName: string, secrets: string[]): Prom
  *   });
  */
 export async function addSecret(vaultName: string, secretName: string, secretValue: string): Promise<void> {
-  try {
-    const credential = new DefaultAzureCredential();
-    const url = vaultUrl(vaultName);
-    const client = new SecretClient(url, credential);
+  const credential = new DefaultAzureCredential();
+  const url = vaultUrl(vaultName);
+  const client = new SecretClient(url, credential);
 
-    await client.setSecret(secretName, secretValue);
-    process.env[snakeUpperCase(secretName)] = secretValue;
-  } catch (error: any) {
-    console.error(`Failed to add secret ${secretName}: ${error.message}`);
-  }
+  await client.setSecret(secretName, secretValue);
+  process.env[snakeUpperCase(secretName)] = secretValue;
 }
